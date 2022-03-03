@@ -1,0 +1,32 @@
+
+<div class="row">
+
+    <h1>Calculator</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label> value 1 </laber>
+            <input type="number" required name="num1"/>
+        <br/>
+        <br/>
+        <label>Select OPR.. </laber> 
+            <select name="opr">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+        <br/>
+        <br/>
+        <label> value 2 </laber>
+            <input type="number" required name="num2"/>
+        <br/>
+        <br/>
+        <button type="submit" class="btn btn-primary">Calculate</button>
+        <br/>
+        <br/>
+        <label> Output </laber>
+            <input type="text" readonly name="output" value={{c}}>
+    
+    </form>
+    
+            </div>

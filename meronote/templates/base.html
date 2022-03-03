@@ -3,7 +3,12 @@
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-1 bg-info">
-        Folder
+        {% block leftside %}
+
+        {% include 'leftside.html' %}
+
+
+        {% endblock leftside %}
       </div>
       <div class="col-md-8 bg-light">
 
@@ -14,7 +19,12 @@
          
       </div>
       <div class="col-md-3 bg-info">
-        Right side
+        {% block rightside %}
+    
+        {% include 'rightside.html' %}
+
+        {% endblock rightside %}
+
       </div>
     </div>
   </div>
