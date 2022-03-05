@@ -19,8 +19,12 @@ from meronote import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home,name='home'),
+    path('', views.index,name='index'),
+    path('display/<id>', views.home,name='home'),
     path('saveform/', views.saveform,name='saveform'),
+    path('leftside/', views.leftside,name='leftside'),
+    path('saveformdata/',views.saveform,name='saveform'),
+
 
 
 ]

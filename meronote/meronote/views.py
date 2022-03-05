@@ -1,45 +1,41 @@
 from django.shortcuts import render
-def home(request):
-    c=''
-    try:
-        if request.method=="POST":
-            n1=float(request.POST.get('num1'))
-            n2=float(request.POST.get('num2'))
-            opr=request.POST.get('opr')
+from savefile.models import saveFile
 
-            if opr=="+":
-                c=n1+n2
-            elif opr=="-":
-                c=n1-n2
-            elif opr=="*":
-                c=n1*n2
-            elif opr=="/":
-                c=n1/n2
+from savefile.models import saveFile
 
-    except:
-        c="Invalid Operation.."
-    print(c)
-    return render(request,"index.html",{'c':c})
+def index(request):
+    dataFile=saveFile.objects.all()
+    data={
+        'dataFile':dataFile,
+    }
+    
+    return render(request,"index.html",data)
+
+def home(request,id):
+    dataFile=saveFile.objects.get(id=id)
+    data={
+        'dataFile':dataFile,
+    }
+    
+    return render(request,"index.html",data)
+
+def leftside(request):
+    dataList=saveFile.objects.all()
+    data={
+        'dataList': dataList,
+    }
+    return render(request,'leftside.html',data)
+
 def saveform(request):
-    c=''
-    try:
-        if request.method=="POST":
-            n1=float(request.POST.get('num1'))
-            n2=float(request.POST.get('num2'))
-            opr=request.POST.get('opr')
+    m=''
+    if request.method=='POST':
+        name1=request.POST.get('name')
+        message1=request.POST.get('message')
+        fname1=request.POST.get('fname')
+        en=saveFile(name=name1,message=message1,fname=fname1) ##get all data in modelClass
+        en.save()
+        m="Data Insert Sucessfully"
 
-            if opr=="+":
-                c=n1+n2
-            elif opr=="-":
-                c=n1-n2
-            elif opr=="*":
-                c=n1*n2
-            elif opr=="/":
-                c=n1/n2
-
-    except:
-        c="Invalid Operation.."
-    print(c)
-    return render(request,"myform.html",{'c':c})
-
+    return render(request,'myform.html',{'m':m})
+   
     

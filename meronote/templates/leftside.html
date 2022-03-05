@@ -1,0 +1,6 @@
+{% block leftside %}
+{% for n in dataList %}
+    <a href="#">{{forloop.counter}}{{n.name}}</a>
+    <br/>
+{% endfor %}
+{% endblock leftside %}

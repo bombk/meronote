@@ -1,32 +1,83 @@
-
 <div class="row">
+<div class="card">
+    <div class="card-body">
 
     <h1>Calculator</h1>
-    <form method="post">
-        {% csrf_token %}
-        <label> value 1 </laber>
-            <input type="number" required name="num1"/>
-        <br/>
-        <br/>
-        <label>Select OPR.. </laber> 
-            <select name="opr">
-                <option value="+">+</option>
-                <option value="-">-</option>
-                <option value="*">*</option>
-                <option value="/">/</option>
-            </select>
-        <br/>
-        <br/>
-        <label> value 2 </laber>
-            <input type="number" required name="num2"/>
-        <br/>
-        <br/>
-        <button type="submit" class="btn btn-primary">Calculate</button>
-        <br/>
-        <br/>
-        <label> Output </laber>
-            <input type="text" readonly name="output" value={{c}}>
-    
+    <form name = "form1">
+	
+        <!-- This input box shows the button pressed by the user in calculator. -->
+      <input id = "calc" type ="text" name = "answer"> <br> <br>
+      <!-- Display the calculator button on the screen. -->
+      <!-- onclick() function display the number prsses by the user. -->
+      <input class="btn btn-primary btn-lg" type = "button" value = "1" onclick = "form1.answer.value += '1' ">
+      <input class="btn btn-primary btn-lg" type = "button" value = "2" onclick = "form1.answer.value += '2' ">
+      <input class="btn btn-primary btn-lg" type = "button" value = "3" onclick = "form1.answer.value += '3' ">
+       <input class="btn btn-primary btn-lg" type = "button" value = "+" onclick = "form1.answer.value += '+' ">
+      <br> <br>
+      
+      <input class="btn btn-primary btn-lg" type = "button" value = "4" onclick = "form1.answer.value += '4' ">
+      <input class="btn btn-primary btn-lg" type = "button" value = "5" onclick = "form1.answer.value += '5' ">
+      <input class="btn btn-primary btn-lg" type = "button" value = "6" onclick = "form1.answer.value += '6' ">
+      <input class="btn btn-primary btn-lg" type = "button" value = "-" onclick = "form1.answer.value += '-' ">
+      <br> <br>
+      
+      <input class="btn btn-primary btn-lg" type = "button" value = "7" onclick = "form1.answer.value += '7' ">
+      <input class="btn btn-primary btn-lg" type = "button" value = "8" onclick = "form1.answer.value += '8' ">
+      <input class="btn btn-primary btn-lg" type = "button" value = "9" onclick = "form1.answer.value += '9' ">
+      <input class="btn btn-primary btn-lg" type = "button" value = "*" onclick = "form1.answer.value += '*' ">
+      <br> <br>
+      
+      
+      <input class="btn btn-primary btn-lg" type = "button" value = "0" onclick = "form1.answer.value += '0' ">
+      <input class="btn btn-primary btn-lg" type = "button" value = "." onclick = "form1.answer.value += '.' ">
+      <input  class="btn btn-primary btn-lg" type = "button" value = "/" onclick = "form1.answer.value += '/' ">
+
+        <!-- When we click on the '=' button, the onclick() shows the sum results on the calculator screen. -->
+        <input class="btn btn-primary btn-lg" type = "button" value = "Clear" onclick = "form1.answer.value = ' ' " id= "clear" > 
+     
+      <br/> 
+      <br/> 
+      <!-- Display the Cancel button and erase all data entered by the user. -->
+      <input class="btn btn-primary btn-lg" type = "button" value = "Calculate" onclick = "form1.answer.value = eval(form1.answer.value) ">
     </form>
-    
-            </div>
+</div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+      
+        <h2>Google Search</h2>
+      
+        <form class="form-group" id="form" action="">
+            <input type="text" id="search" placeholder="Search" class="form-control">
+            <br>
+            <button class="btn btn-primary">Search</button>
+            <p>
+                This is result section
+                This is result section
+                This is result section
+                This is result section
+            </p>
+        </form>
+    </div>
+  </div>
+
+<div class="card">
+    <div class="card-body">
+      
+        <h2>Dictionary</h2>
+      
+        <form action="">
+            <input type="text" class="form-control">
+            <br>
+            <button class="btn btn-primary">Search</button>
+            <p>
+                This is result section
+                This is result section
+                This is result section
+                This is result section
+            </p>
+        </form>
+    </div>
+  </div>
+</div>
